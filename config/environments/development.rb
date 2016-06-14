@@ -8,9 +8,14 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  
+  config.web_console.whitelisted_ips = '0.0.0.0'
+  
+  Rails.application.config.action_cable.allowed_request_origins = ["https://chipchat-remuspoienar.c9users.io"]
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
