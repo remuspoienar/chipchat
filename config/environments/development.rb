@@ -13,7 +13,7 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
   
-  config.web_console.whitelisted_ips = '0.0.0.0'
+  config.web_console.whiny_requests = false
   
   Rails.application.config.action_cable.allowed_request_origins = ["https://chipchat-remuspoienar.c9users.io"]
 
