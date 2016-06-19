@@ -1,16 +1,21 @@
-<div class="row col-md-8 col-md-offset-2">
-  <h1><%= @chatroom.topic %></h1>
-
-  <div class="panel panel-default">
-    <div class="panel-body" id="messages">
-      <% if @chatroom.messages.any? %>
-      <%= render partial: 'messages/message', collection: @chatroom.messages%>
-      <% end %>
+<div id="chat-window" class="container">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @chatroom.topic %></h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div id="messages" class="col-md-12">
+      <%= render partial: 'messages/message', collection: @chatroom.messages  if @chatroom.messages.any? %>
     </div>
   </div>
   
   <form>
-    <label>Your message</label><br>
-    <input type="text" data-behavior="room_speaker" chatroom-id="<%= @chatroom.id %>">
+    <div class="form-group">
+      <input type="text" class="form-control" id="message-input" placeholder="Say something" data-behavior="room_speaker" chatroom-id="<%= @chatroom.id %>">
+    </div>
   </form>
+  
 </div>

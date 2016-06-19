@@ -1,3 +1,4 @@
-<div class="message">
-    <p><strong><%=message.user.username%>:</strong> <%=message.content%></p>
-</div>
+<p>
+    <%=message.user.username + ' >> ' + message.content%>
+    <span class="pull-right text-right"><%= message.created_at.strftime("%a %I:%M %p") %></span>
+</p>
